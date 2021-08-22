@@ -1,0 +1,248 @@
+.circle {
+    border-radius: 15px;
+}
+
+.cek {
+    border: 1px solid black;
+}
+
+.fs-7{
+    font-size: 12px;
+}
+
+.footer{
+    background-color: #F8F9FA;
+}
+
+#banner {
+    background-color: #666666;
+    background-image: url('../js/img/gedung.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: #d8d8d8;
+    padding: 14em 0;
+    margin: 0px;
+    text-align: center;
+    position: relative;
+    z-index: 0;
+}
+
+#banner:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.71);
+    z-index: -1;
+}
+
+#banner .inner {
+    position: relative;
+    z-index: 1;
+}
+
+#banner .inner :last-child {
+    margin-bottom: 0;
+}
+
+#banner h2,
+#banner h3,
+#banner h4,
+#banner h5,
+#banner h6 {
+    color: #ffffff;
+}
+
+#banner .button.alt {
+    box-shadow: inset 0 0 0 1px rgba(144, 144, 144, 0.75);
+    color: #ffffff !important;
+}
+
+#banner .button.alt:hover {
+    background-color: rgba(144, 144, 144, 0.275);
+}
+
+#banner .button.alt:active {
+    background-color: rgba(144, 144, 144, 0.4);
+}
+
+#banner .button.alt.icon:before {
+    color: #c1c1c1;
+}
+
+#banner .button {
+    min-width: 12em;
+}
+
+#banner h2 {
+    font-size: 2.5em;
+    line-height: 1em;
+    margin: 0 0 0.5em 0;
+    padding: 0;
+}
+
+#banner p {
+    font-size: 1.5em;
+    margin-bottom: 2em;
+}
+
+#banner p a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+    padding: 15px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    /* margin-bottom: 40px; */
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    transition: all 0.3s;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 250;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+#content {
+    width: 100%;
+    /* padding: 20px; */
+    /* min-height: 100vh; */
+    transition: all 0.3s;
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+
+    footer {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        text-align: center;
+    }
+
+    #sidebar.active {
+        margin-left: 0;
+    }
+
+    #sidebarCollapse span {
+        display: none;
+    }
+}
+
+/* ---------------------------------------------------
+    KERTAS A4
+----------------------------------------------------- */
+
+.kertas {
+    width: 223mm;
+}
+
+.mx-6 {
+    margin: 0 70px;
+}
+
+.f-kop-1{
+    font-size: 24px;
+}
+
+.f-kop-2 {
+    font-size: 20px;
+}
+
+/* @page {
+    size: A4 landscape;
+    margin: 0;
+}
+@media print {
+    html, body {
+        width: 297mm;
+        height: 210mm;
+    }
+} */
