@@ -25,9 +25,7 @@ class AuditController extends Controller
         INNER JOIN butir_sop btr ON btr.kode_sop = jdw.kode_sop 
         INNER JOIN deskriptor dsk ON dsk.kode_butir = btr.kode_butir 
         WHERE jdw.id_auditor = $query->id_pengguna
-        AND jdw.tanggal_selesai 
-        between date(now()) 
-        AND DATE_ADD(date(now()), INTERVAL +14 DAY)");
+        ");
 
         return response()->json($data);
     }
