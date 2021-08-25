@@ -15,7 +15,10 @@ class UnitKerjaController extends Controller
     
     public function index()
     {
-        $query = VwUnitKerja::all();
+        $query = UnitKerja::select('kode_unit', 'nama_unit', 'unit_kerja.nik', 'penanggung_jawab.nama', 'position.nama_jabatan')
+            ->join('penanggung_jawab', 'penanggung_jawab.nik', '=', 'unit_kerja.nik')
+            ->join('position', 'position.uuid', '=', 'unit_kerja.uuid_jabatan')
+            ->get();
 
         $data = $query->toArray();
         $i = 0;

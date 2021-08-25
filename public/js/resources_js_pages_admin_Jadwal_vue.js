@@ -401,7 +401,6 @@ __webpack_require__.r(__webpack_exports__);
       $("#add").modal('show');
     },
     modalUpdate: function modalUpdate(data) {
-      this.getDataMax();
       this.getDataSop();
       this.getDataAuditor();
       $("#update").modal('show');

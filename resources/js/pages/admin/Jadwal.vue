@@ -380,7 +380,6 @@
                 $("#add").modal('show')
             },
             modalUpdate(data) {
-                this.getDataMax()
                 this.getDataSop()
                 this.getDataAuditor()
                 $("#update").modal('show')

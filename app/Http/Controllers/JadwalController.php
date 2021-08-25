@@ -82,6 +82,8 @@ class JadwalController extends Controller
             'tanggal_selesai' => $request->tanggal_selesai,
         ];
 
+        dd($data);
+
         Jadwal::create($data);
 
         return response()->json([

@@ -148,7 +148,7 @@ class DokumenController extends Controller
     {
         $query = Dokumen::where('id_dokumen', $id_dokumen);
         // Storage::delete("public/dokumen/".$query->first()->dokumen);
-        unlink('./dokumen/' . $query->first()->nama_file);
+        unlink('./dokumen/' . $query->first()->dokumen);
         $query->delete();
         return response()->json([
             'status' => true,

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Deskriptor;
+use App\Models\PenanggungJawab;
 use App\Models\VwJob;
 use App\Models\Job;
 
@@ -16,7 +16,10 @@ class JobController extends Controller
     
     public function index()
     {
-        $query = VwJob::all();
+        $query = Job::select('kode_jobdesk', 'job_desk.nik', 'penanggung_jawab.nama', 'fungsi', 'tgl_penetapan', 'position.nama_jabatan')
+            ->join('penanggung_jawab', 'penanggung_jawab.nik', '=', 'job_desk.nik')
+            ->join('position', 'position.uuid', '=', 'job_desk.uuid_jabatan')
+            ->get();
 
         $data = $query->toArray();
         $i = 0;

@@ -136,9 +136,7 @@
 </template>
 
 <script>
-import NavAuditor from '../../components/NavAuditor.vue'
     export default {
-  components: { NavAuditor },
         data() {
             return {
                 rows: [],
@@ -259,7 +257,7 @@ import NavAuditor from '../../components/NavAuditor.vue'
             },
             handleUpdate() {
                 console.log(this.form)
-                axios.put('/api/auditor/audit', this.form).then((response) => {
+                axios.post('/api/auditor/audit', this.form).then((response) => {
                     if (response.data.status) {
                         this.$swal.fire({
                             toast: true,
@@ -338,7 +336,7 @@ import NavAuditor from '../../components/NavAuditor.vue'
                     keterangan: '',
                 }
 
-                $("#updateJabatan").modal('hide')
+                $("#update").modal('hide')
             }
         },
         mounted() {
