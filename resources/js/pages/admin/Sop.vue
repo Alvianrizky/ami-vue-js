@@ -51,7 +51,7 @@
                                                         </v-icon>
                                                     </v-btn>
                                                     <v-btn color="bg-danger" dark fab small
-                                                        @click="handledelete(item.kode_sop)">
+                                                        @click="handledelete(item.id)">
                                                         <v-icon>
                                                             mdi-delete
                                                         </v-icon>
@@ -232,6 +232,7 @@
                 standarNasional: [],
                 PenanggungJawab: [],
                 form: {
+                    id: '',
                     kode_sop: '',
                     kode_unit: '',
                     kode_sn: '',
@@ -309,7 +310,7 @@
             },
             handleUpdate() {
                 console.log(this.form)
-                axios.put('/api/admin/sop/'+this.form.kode_sop, this.form).then((response) => {
+                axios.put('/api/admin/sop/'+this.form.id, this.form).then((response) => {
                     if (response.data.status) {
                         this.$swal.fire({
                             toast: true,
@@ -339,7 +340,7 @@
                     }
                 })
             },
-            handledelete(kode_sop) {
+            handledelete(id) {
                 this.$swal.fire({
                     title: 'Anda yakin akan menghapus data ini?',
                     text: "Data akan dihapus secara permanen!",
@@ -352,7 +353,7 @@
                     reverseButtons: true
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        axios.delete('/api/admin/sop/' +kode_sop).then((response) => {
+                        axios.delete('/api/admin/sop/' +id).then((response) => {
                             if(response.data.status) {
                                 this.$swal.fire({
                                     icon: 'success',

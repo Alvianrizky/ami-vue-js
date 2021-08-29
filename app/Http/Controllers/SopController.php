@@ -57,7 +57,7 @@ class SopController extends Controller
         ]);
     }
 
-    public function update(Request $request, $kode_sop)
+    public function update(Request $request, $id)
     {
         $validated = $request->validate([
             'kode_unit' => 'required',
@@ -77,7 +77,7 @@ class SopController extends Controller
             'tgl_sop' => $request->tgl_sop,
         ];
 
-        StandarSop::where('kode_sop', $kode_sop)->update($data);
+        StandarSop::where('id', $id)->update($data);
 
         return response()->json([
             'status' => true,
@@ -86,9 +86,9 @@ class SopController extends Controller
         ]);
     }
 
-    public function destroy($kode_sop)
+    public function destroy($id)
     {
-        $query = StandarSop::where('kode_sop', $kode_sop);
+        $query = StandarSop::where('id', $id);
         $query->delete();
         return response()->json([
             'status' => true,

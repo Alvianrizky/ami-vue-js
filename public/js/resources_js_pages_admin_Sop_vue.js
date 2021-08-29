@@ -240,6 +240,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       standarNasional: [],
       PenanggungJawab: [],
       form: (_form = {
+        id: '',
         kode_sop: '',
         kode_unit: '',
         kode_sn: '',
@@ -321,7 +322,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this6 = this;
 
       console.log(this.form);
-      axios.put('/api/admin/sop/' + this.form.kode_sop, this.form).then(function (response) {
+      axios.put('/api/admin/sop/' + this.form.id, this.form).then(function (response) {
         if (response.data.status) {
           var _this6$form;
 
@@ -347,7 +348,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         }
       });
     },
-    handledelete: function handledelete(kode_sop) {
+    handledelete: function handledelete(id) {
       var _this7 = this;
 
       this.$swal.fire({
@@ -362,7 +363,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         reverseButtons: true
       }).then(function (result) {
         if (result.isConfirmed) {
-          axios["delete"]('/api/admin/sop/' + kode_sop).then(function (response) {
+          axios["delete"]('/api/admin/sop/' + id).then(function (response) {
             if (response.data.status) {
               _this7.$swal.fire({
                 icon: 'success',
@@ -630,7 +631,7 @@ var render = function() {
                                       },
                                       on: {
                                         click: function($event) {
-                                          return _vm.handledelete(item.kode_sop)
+                                          return _vm.handledelete(item.id)
                                         }
                                       }
                                     },

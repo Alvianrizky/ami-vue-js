@@ -61,8 +61,8 @@ Route::prefix('ketua/')->group(function () {
 
         Route::get('/', [JobController::class, 'index']);
         Route::post('/', [JobController::class, 'store']);
-        Route::put('/{kode_jobdesk}', [JobController::class, 'update']);
-        Route::delete('/{kode_jobdesk}', [JobController::class, 'destroy']);
+        Route::put('/{id}', [JobController::class, 'update']);
+        Route::delete('/{id}', [JobController::class, 'destroy']);
     });
 
     Route::prefix('unit-kerja')->group(function () {
