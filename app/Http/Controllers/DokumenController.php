@@ -42,8 +42,8 @@ class DokumenController extends Controller
         ]);
 
         $file = $request->file;
-        $pisah = explode('.',$request->kode_sop);
-        $fileName = "SN_1_S$pisah[1]_00_20$pisah[2].". $file->extension();
+        $name = str_replace(' ', '.', $request->nama_dokumen);
+        $fileName = "$name.". $file->extension();
         
         $data = [
             'kode_sop' => $request->kode_sop,

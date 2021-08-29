@@ -23,7 +23,7 @@ class AkunController extends Controller
             $pengguna = Pengguna::where('uuid', $row->uuid_pengguna)->first();
 
             $data[$i]['no'] = $i + 1;
-            $data[$i]['pengguna'] = $pengguna->nama;
+            $data[$i]['pengguna'] = $pengguna ? $pengguna->nama : '' ;
 
             $i++;
         }
@@ -41,7 +41,7 @@ class AkunController extends Controller
             $pengguna = Pengguna::where('uuid', $row->uuid_pengguna)->first();
 
             $data[$i]['no'] = $i + 1;
-            $data[$i]['pengguna'] = $pengguna->nama;
+            $data[$i]['pengguna'] = $pengguna ? $pengguna->nama : '' ;
 
             $i++;
         }
