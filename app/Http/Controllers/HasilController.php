@@ -23,7 +23,7 @@ class HasilController extends Controller
             , COUNT(*) AS jumlah,sop.*,adt.*,btr.*,dsk.*,evl.*,jdw.* 
             FROM evaluasi evl 
             INNER JOIN standar_operasional sop ON sop.kode_sop = evl.kode_sop 
-            INNER JOIN auditor adt ON adt.id_auditor = evl.id_auditor 
+            INNER JOIN pengguna adt ON adt.id = evl.id_auditor 
             INNER JOIN butir_sop btr ON btr.kode_butir = evl.kode_butir 
             INNER JOIN deskriptor dsk ON dsk.kode_deskripsi = evl.kode_deskripsi 
             INNER JOIN jadwal jdw ON jdw.kode_jadwal = evl.kode_jadwal 
@@ -38,7 +38,7 @@ class HasilController extends Controller
         $query = DB::select("SELECT sop.*,adt.*,btr.*,dsk.*,evl.*,jdw.* 
         FROM evaluasi evl 
         INNER JOIN standar_operasional sop ON sop.kode_sop = evl.kode_sop 
-        INNER JOIN auditor adt ON adt.id_auditor = evl.id_auditor 
+        INNER JOIN pengguna adt ON adt.id = evl.id_auditor 
         INNER JOIN butir_sop btr ON btr.kode_butir = evl.kode_butir 
         INNER JOIN deskriptor dsk ON dsk.kode_deskripsi = evl.kode_deskripsi 
         INNER JOIN jadwal jdw ON jdw.kode_jadwal = evl.kode_jadwal");
